@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Text Box Validation</title>
+    <script>
+        function alphanumeric(uname) {
+            var letters = /^[0-9a-zA-Z_]+$/;
+            if (uname.value.match(letters)) {
+                alert('your name is  ' + uname.value);
+                return true;
+            }
+            else {
+                alert('Name must have alphanumeric and underscore characters only');
+                uadd.focus();
+                return false;
+            }
+        }
+        function ValidateEmail(uemail) {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (uemail.value.match(mailformat)) {
+                alert('your email is  ' + uemail.value);
+                return true;
+            }
+            else {
+                alert("You have entered an invalid email address!");
+                uemail.focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body align="center">
+    <form name="formnam">
+        <br><br>
+        <label for="name"><b>Enter your Name :</b></label><br><br>
+        <input type="text" name="uname" placeholder="Enter your name"><br><br>
+        <input type="submit" value="click" onclick="alphanumeric(document.formnam.uname)"><br><br>
+        <br>
+        <label for="email"><b>Enter your Email : </b></label><br><br>
+        <input type="text" name="uemail" placeholder="Enter your email"><br><br>
+        <input type="submit" value="Enter" onclick="ValidateEmail(document.formnam.uemail)">
+    </form>
+</body>
+
+</html>
